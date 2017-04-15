@@ -4,7 +4,9 @@
   "description": "Simple experiment with HTML5 canvas and typescript ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc -w ./js/ts/Main.ts",
+    "start": "webpack --config mywebpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/maarten551/triangle-splitter/issues"
   },
-  "homepage": "https://github.com/maarten551/triangle-splitter#readme"
+  "homepage": "https://github.com/maarten551/triangle-splitter#readme",
+  "devDependencies": {
+    "source-map-loader": "^0.2.1",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1"
+  }
 }
