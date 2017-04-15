@@ -1,7 +1,7 @@
 module.exports = {
     entry: './js/ts/Main.ts',
     output: {
-        filename: './js/js.js',
+        filename: './js/triangle-splitter.js',
         path: __dirname
     },
     module: {

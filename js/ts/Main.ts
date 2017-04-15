@@ -1,12 +1,10 @@
-import {Test} from "./Test";
-
+import {Canvas} from "./Canvas";
 export class Main {
-    private canvasIdName: string;
-    constructor(canvasIdName: string) {
-        this.canvasIdName = canvasIdName;
+    private canvas: Canvas;
 
-        new Test(2);
+    constructor(canvasIdName: string) {
+        this.canvas = new Canvas(canvasIdName);
     }
 }
 
-let main = new Main("");
+new Main("canvas");
