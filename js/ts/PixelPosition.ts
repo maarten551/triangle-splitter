@@ -1,9 +1,9 @@
 export class PixelPosition {
-    public height: number;
-    public width: number;
-    
-    constructor(height: number, width: number) {
-        this.height = height;
-        this.width = width;
+    public y: number;
+    public x: number;
+
+    constructor(y: number, x: number) {
+        this.y = y;
+        this.x = x;
     }
 }
