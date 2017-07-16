@@ -24,7 +24,7 @@ export class Renderer {
         this.beginTime = new Date();
         this.drawableItems = [];
 
-        this.nextActionTimeStamp = Date.now();
+        this.nextActionTimeStamp = 0;
 
         this.handleFrame();
     }
@@ -53,10 +53,8 @@ export class Renderer {
                     drawAble.draw();
                 }
             }
+
+            this.handleFrame();
         });
-
-
-        console.log(this.actionCounter);
-        window.setTimeout(() => this.handleFrame(), Math.round(1000 / Renderer.ACTIONS_PER_SECOND));
     }
 }

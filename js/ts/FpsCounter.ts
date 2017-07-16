@@ -8,18 +8,19 @@ export class FpsCounter {
         this.framesLastSecond = [];
         this.interval = interval;
 
-        this.lastCheckInTimestamp = Date.now();
+        this.lastCheckInTimestamp = 0;
     }
 
-    public isTimeToCheckFrameCount(currentTimeStamp) : boolean {
-        return ((this.lastCheckInTimestamp + this.interval) > currentTimeStamp);
+    public isTimeToCheckFrameCount(currentTimeStamp: number) : boolean {
+        return ((this.lastCheckInTimestamp + this.interval) < currentTimeStamp);
     }
 
-    public addFrameTimestamp(timeStamp): void {
+    public addFrameTimestamp(timeStamp: number): void {
         this.framesLastSecond.push(timeStamp);
     }
 
-    public getAmountOfFrames(currentTimeStamp): number {
+    public getAmountOfFrames(currentTimeStamp: number): number {
+        this.lastCheckInTimestamp = currentTimeStamp;
         let validAfterTimeStamp = currentTimeStamp - this.interval;
 
         for (let i = this.framesLastSecond.length; i > 0; i--) {

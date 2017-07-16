@@ -20,7 +20,7 @@ export class EventHandler {
     public processActionCounter(actionCounter: number): void {
         let onFrameEvents:EventAble[] = this.events.get(EventOnFrame.TYPE);
 
-        if (onFrameEvents !== null) {
+        if (onFrameEvents) {
             onFrameEvents.forEach((value: EventOnFrame) => {
                 value.handleFrame(actionCounter);
             });
