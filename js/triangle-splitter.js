@@ -137,16 +137,16 @@ class Renderer {
     }
     handleFrame() {
         this.frameCounter++;
-        this.eventHandler.processFrameCounter(this.frameCounter);
+        this.eventHandler.processActionCounter(this.frameCounter);
         this.canvas.reset();
         for (let drawAble of this.drawableItems) {
             drawAble.draw();
         }
         console.log(this.frameCounter);
-        window.setTimeout(() => this.handleFrame(), Math.round(1000 / Renderer.FRAMES_PER_SECOND));
+        window.setTimeout(() => this.handleFrame(), Math.round(1000 / Renderer.ACTIONS_PER_SECOND));
     }
 }
-Renderer.FRAMES_PER_SECOND = 60;
+Renderer.ACTIONS_PER_SECOND = 60;
 exports.Renderer = Renderer;
 
 

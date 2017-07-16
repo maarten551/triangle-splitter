@@ -17,12 +17,12 @@ export class EventHandler {
         }
     }
 
-    public processFrameCounter(currentFrame: number) {
+    public processActionCounter(actionCounter: number): void {
         let onFrameEvents:EventAble[] = this.events.get(EventOnFrame.TYPE);
 
-        if (onFrameEvents != null) {
+        if (onFrameEvents !== null) {
             onFrameEvents.forEach((value: EventOnFrame) => {
-                value.handleFrame(currentFrame)
+                value.handleFrame(actionCounter);
             });
         }
     }

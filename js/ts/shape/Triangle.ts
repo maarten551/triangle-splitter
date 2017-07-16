@@ -4,7 +4,6 @@ import {Canvas} from "../Canvas";
 export class Triangle extends Drawable {
     private size: number;
 
-
     constructor(position: PixelPosition, canvas: Canvas, size: number, color: string) {
         super(position, canvas);
 
